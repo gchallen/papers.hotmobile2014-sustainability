@@ -1,80 +1,69 @@
 \section{Introduction}
 
-Imagine if women bought dresses\footnote{To reverse the unavoidably gendered
-nature of this example substitute men for women and suits for dresses.} the
-way we currently buy smartphones. After waiting outside a glassy store, they
-rush in and find a stack of the latest dress: the iDress~5. None is marked
-with a size, and there are no dressing rooms, but this is the latest fashion
-and so they proceed to checkout. At home they realize that every iDress is a
-single size and few fit properly, but no tailor will alter them. When they
-try to return it they are reminded that they agreed to wear it for two years.
+\XXXnote{GWA : TODO : Rewrite proposal text.}
 
-Of course this is not how dresses are bought and sold. Fashion houses study
-the human body to design shapely dresses in appropriate sizes. Women know
-their measurements and select dresses by trying them on. And tailoring can
-alter the fit of a dress to better match its owner. We argue that smartphones
-are as personal as a dress and that the current ``one size fits all''
-approach reduces performance and battery life. As an alternative we present a
-measurement, design, selection and tailoring process we call
-\textit{smartphone fitting} that ensures every smartphone user finds the
-device that is a perfect fit: the myPhone, rather than the iPhone.
+Redesigning the hardware-software interface will allow next generation
+smartphones to effectively allocate energy between components and across time
+to meet application needs. Improving performance, however, also requires
+prioritizing energy usage to ensure that important applications receive the
+resources they need to operate effectively, while recognizing that users use
+their phones and applications different and will require different policies.
+A user that only charges their phone at night, for example, requires
+different energy management strategies than one that charges their phone
+regularly at their desk or in the car.
 
-\section{Motivation}
+Two major challenges stand in the way of an effective energy management
+framework for smartphones. First, while measuring application energy usage
+has received a great deal of attention, putting usage into context has not.
+Measurement alone may provide helpful feedback to users, but is not
+sufficient to enable effective policies, since the behavior and efficiency of
+different applications varies, as does their importance to each user. It is
+no surprise, for example, that an application like Skype consumes more energy
+than a simple messaging client. And this information is not useful on its
+own, since Skype's high energy usage might be acceptable if it is often used
+and valued and unacceptable if it is not. These uncertainties make energy
+usage alone usable for human interpretation---since users can use their own
+experience to put the numbers in context---but \textit{unusable} for
+automated response or application energy prioritization.
 
-\begin{figure}[t]
-\includegraphics[width=\columnwidth]{./figures/flow.pdf}
+The second challenge is the fact that tuning energy consumption currently
+requires deep integration with the specifics of each particular hardware
+component, making writing cross-device policies difficult or impossible. A
+policy that relies on a certain feature of a Wifi chipset available on a
+particular device will fail on a second device if its Wifi driver fails to
+support the feature. Without a narrow waste enabling cross-device policies,
+energy management improvements will be limited to similar devices and quickly
+become obsolete given the rapid improvements in smartphone technologies.
 
-\caption{\textbf{Overview of smartphone fitting.} Traces collected from users
-are used both to guide device design, help users select devices, and continue
-the process of fine-tuning device configuration during use.}
+We propose to address both of these challenges through an cross-device energy
+management policy framework called \textit{Jouler}. Jouler's policy engine
+takes per-application energy measurement and utility determinations and uses
+them to select application-specific inefficiency targets. The tuning
+component then adjusts component-specific settings to meet the selected
+inefficiency target, utilizing the interface improvements achieved by the
+redesign objective previously described. To allow policies to be easily moved
+between devices, policies do not operate on specific hardware components
+directly. Instead, the operate on what we refer to as \textit{idealized
+components}, which provide smooth tradeoffs between energy and one of several
+performance metrics such as throughput, latency, or fidelity. To be
+integrated into Jouler, specific components must translate operations on
+these idealized components to adjustments appropriate for their particular
+hardware device. Below we describe the two novel contributions of the Jouler
+framework---determining application utility and utilizing idealized
+components---before describing several possible Jouler policies.
 
-\label{figure-flow}
-\end{figure}
+\begin{figure*}
+  
+  \includegraphics[width=\textwidth]{./figures/jouler.pdf}
 
-Steve Jobs famously introduced the iPhone as three revolutionary
-products---iPod, mobile phone, and Internet communicator---merged into
-one~\cite{ipod-introduction-video}. So it should be no surprise that
-smartphone usage varies considerably between users. Some play games, others
-don't. Some use it mainly as a phone, others as an Internet communication
-device. Some listen to a lot of music, others not so much. Some install lots
-of apps, others few. Some charge only at night, others regularly during the
-day. Some carry it in their purse, others in their pants.
+  \caption{\textbf{The Jouler energy management policy framework.} Jouler
+  addresses two key weaknesses of current smartphone energy management: lack
+  of context for application energy usage and inability to write effective
+  cross-device policies.}
+  
+  \vspace*{0.1in}
+  \hrule
+  \vspace*{-0.1in}
+  \label{figure-jouler}
 
-\clearpage
-
-Figures~\ref{figure-textvcall}~and~\ref{figure-breakdown} show evidence of
-this variation from an experiment run on \PhoneLab{}, a 190~smartphone
-programmable testbed at SUNY Buffalo~\cite{phonelab-web}.
-Figure~\ref{figure-breakdown} shows the energy consumption for 77~\PhoneLab{}
-participants\footnote{Not all 190~participants joined this experiment.} for a
-single day, broken down into the categories recorded by Android. Differences
-in energy consumption are significant and clearly reflect usage variation. As
-a direct measure of usage differences, Figure~\ref{figure-textvcall} shows
-phone and texting usage by participants for a single day and confirms the
-folk wisdom that some users never use the phone but send hundreds of text
-messages, while others never text but place multiple calls.
-
-Differences in usage result in different hardware requirements, which cannot
-be satisfied by a single device. Strangely, despite the fact that smartphones
-are a more flexible technology than laptops and desktops, smartphone vendors
-offer fewer options. As an example, Apple offers dozens of iMac desktop
-configurations including choices of processors, memory, and peripherals, but
-only three iPhone~5 configurations with differing amounts of storage. One of
-the reasons for this may be that there is a lack of tools for guiding users
-to the appropriate smartphone model, given that it is difficult if not
-impossible for most users to determine how their needs map down to the
-hardware configurations offered by vendors. Unfortunately, flexible
-battery-constrained devices like smartphones suffer more from mismatches
-between hardware and usage: underprovisioned components act as constraints,
-while overprovisioned components drain unnecessary power. Smartphone users
-need more options and more help when choosing.
-
-\begin{figure}[t]
-\includegraphics[width=\columnwidth]{./figures/textvcall.pdf}
-
-\caption{\textbf{Texters, callers, and the more flexible.} Roughly equal
-groups of \PhoneLab{} participants text exclusively, call exclusively, or do
-both.}
-
-\label{figure-textvcall}
-\end{figure}
+\end{figure*}

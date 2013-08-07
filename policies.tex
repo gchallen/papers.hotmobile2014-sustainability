@@ -1,0 +1,63 @@
+\section{Example Jouler Policies}
+
+Jouler policies take energy usage and information delivery into account while
+operating over the set of idealized components available on a specific
+device. We expect that this cross-device energy management framework will
+enable many new policies to be developed and shared between users. Users may
+experiment with different policies to determine what works best for their
+device, or be guided to an appropriate policy through tracing techniques or
+usage characterization tools outside the scope of this proposal.
+
+Energy management policies may prioritize energy usage over time, between
+applications, or based on any other exogenous information such as the user's
+current activity, location, or direct input. Below we provide examples of
+several energy management policies that could be implemented in the Jouler
+framework.
+
+\begin{itemize}
+
+\item \textbf{Charging pattern adaptation.} Preliminary results on
+\PhoneLab{} show that users display varying charging habits. This policy
+determines the users charging behavior and then adapts energy usage to try
+and devote as much energy to improving application performance while ensuring
+that the smartphone will survive until it is plugged in again. The policy may
+also prompt periodic chargers based on their location to help them remember
+to recharge when power is available. While smartphones are notorious for
+running out of energy too soon, arriving at a plug with energy to spare is
+also a problem, as that energy could have been used to improve performance.
+
+\item \textbf{Gameplay optimization.} Smartphone games are a
+rapidly-expanding segment of the application market. This policy identifies
+gameplay and then optimizes the system by allowing the processor and memory
+to consume more energy while slowing background tasks and components not
+utilized by the game such as storage or networking.
+
+\item \textbf{Rewarding efficient applications.} Not all applications are
+implemented efficiently or utilized efficiently by users. This policy uses
+the information delivery to energy usage ratio to shift energy towards
+applications that are running efficiently. Note that this definition of
+energy is appropriately user specific, as it depends on user interaction. An
+application that performs a great deal of background caching may be
+identified as efficient for a user that uses it often, where the caching pays
+off, but simultaneously as inefficient for a user that uses it rarely where
+the caching costs are wasted.
+
+\item \textbf{Lower and lower.} This policy simply attempts to reduce
+performance for each application until the user reports difficulty using it.
+These settings are then saved and reused each time the application is run.
+Alternatively, it could provide a kind of energy ``throttle'' allowing users
+to speed up or slow down applications interactively at runtime.
+
+\item \textbf{Maximum battery life.} In certain scenarios such as when users
+are traveling the time to the next charging opportunity is unknown. In these
+situations, all applications must be run as efficiently as possible, and this
+can be enabled via a simple Jouler policy.
+
+\end{itemize}
+
+\textbf{By enabling these policies, Jouler facilitates a degree of control
+and personalization of energy management not possible today.} We are excited
+to see what new policies will emerge once such a policy framework is in
+place, and believe that per-user energy management will help keep smartphones
+in primary use for longer periods of time thereby improving smartphone
+sustainability.
