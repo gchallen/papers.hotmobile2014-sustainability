@@ -1,0 +1,80 @@
+\section{Introduction}
+
+Imagine if women bought dresses\footnote{To reverse the unavoidably gendered
+nature of this example substitute men for women and suits for dresses.} the
+way we currently buy smartphones. After waiting outside a glassy store, they
+rush in and find a stack of the latest dress: the iDress~5. None is marked
+with a size, and there are no dressing rooms, but this is the latest fashion
+and so they proceed to checkout. At home they realize that every iDress is a
+single size and few fit properly, but no tailor will alter them. When they
+try to return it they are reminded that they agreed to wear it for two years.
+
+Of course this is not how dresses are bought and sold. Fashion houses study
+the human body to design shapely dresses in appropriate sizes. Women know
+their measurements and select dresses by trying them on. And tailoring can
+alter the fit of a dress to better match its owner. We argue that smartphones
+are as personal as a dress and that the current ``one size fits all''
+approach reduces performance and battery life. As an alternative we present a
+measurement, design, selection and tailoring process we call
+\textit{smartphone fitting} that ensures every smartphone user finds the
+device that is a perfect fit: the myPhone, rather than the iPhone.
+
+\section{Motivation}
+
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{./figures/flow.pdf}
+
+\caption{\textbf{Overview of smartphone fitting.} Traces collected from users
+are used both to guide device design, help users select devices, and continue
+the process of fine-tuning device configuration during use.}
+
+\label{figure-flow}
+\end{figure}
+
+Steve Jobs famously introduced the iPhone as three revolutionary
+products---iPod, mobile phone, and Internet communicator---merged into
+one~\cite{ipod-introduction-video}. So it should be no surprise that
+smartphone usage varies considerably between users. Some play games, others
+don't. Some use it mainly as a phone, others as an Internet communication
+device. Some listen to a lot of music, others not so much. Some install lots
+of apps, others few. Some charge only at night, others regularly during the
+day. Some carry it in their purse, others in their pants.
+
+\clearpage
+
+Figures~\ref{figure-textvcall}~and~\ref{figure-breakdown} show evidence of
+this variation from an experiment run on \PhoneLab{}, a 190~smartphone
+programmable testbed at SUNY Buffalo~\cite{phonelab-web}.
+Figure~\ref{figure-breakdown} shows the energy consumption for 77~\PhoneLab{}
+participants\footnote{Not all 190~participants joined this experiment.} for a
+single day, broken down into the categories recorded by Android. Differences
+in energy consumption are significant and clearly reflect usage variation. As
+a direct measure of usage differences, Figure~\ref{figure-textvcall} shows
+phone and texting usage by participants for a single day and confirms the
+folk wisdom that some users never use the phone but send hundreds of text
+messages, while others never text but place multiple calls.
+
+Differences in usage result in different hardware requirements, which cannot
+be satisfied by a single device. Strangely, despite the fact that smartphones
+are a more flexible technology than laptops and desktops, smartphone vendors
+offer fewer options. As an example, Apple offers dozens of iMac desktop
+configurations including choices of processors, memory, and peripherals, but
+only three iPhone~5 configurations with differing amounts of storage. One of
+the reasons for this may be that there is a lack of tools for guiding users
+to the appropriate smartphone model, given that it is difficult if not
+impossible for most users to determine how their needs map down to the
+hardware configurations offered by vendors. Unfortunately, flexible
+battery-constrained devices like smartphones suffer more from mismatches
+between hardware and usage: underprovisioned components act as constraints,
+while overprovisioned components drain unnecessary power. Smartphone users
+need more options and more help when choosing.
+
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{./figures/textvcall.pdf}
+
+\caption{\textbf{Texters, callers, and the more flexible.} Roughly equal
+groups of \PhoneLab{} participants text exclusively, call exclusively, or do
+both.}
+
+\label{figure-textvcall}
+\end{figure}
