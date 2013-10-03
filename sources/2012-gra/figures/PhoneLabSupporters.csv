@@ -1,0 +1,54 @@
+Name,Affiliation,I/E,Last Name,Contacted By,Emailed,Responded,Primary Interest,Applications,Infrastructure,Networking,Operating Systems,Contact Again,Note
+Ann Bisantz,UB ISE,I,Bisantz,Steve,Will talk,10/25/2010,A,X,,,,Y
+Chang Wen Chen,UB CSE,I,Chen,Steve,,Confirmed,,X (Multi media),,,,Y
+Hakan Ferhatosmanoglu,Ohio State,E,Ferhatosmanoglu,Murat,10/25/2010,10/28/2010,A,X
+Renato Figueiredo,Univ. of Florida,E,Figueiredo,Tevfik,10/26/2010,10/26/2010,A,X
+Raymond Fu,UB CSE,I,Fu,Steve,,10/25/2010,A,X (Vision),,,,Y
+Adriana Iamnitchi,Univ. of South Florida,E,Iamnitchi,Tevfik,10/26/2010,10/26/2010,A,X,X
+Alex Nikolaev,UB ISE,I,Nikolaev,Steve,,10/25/2010,A,X (Gaming),,,,Y
+Carole Rudra,UB Public Health,I,Rudra,Murat,10/25/2010,10/25/2010,A,X
+Lorraine Collins,UB Health Behavior,I,Collins,Murat,10/25/2010,10/29/2010,A,X
+Jason Corso,UB CSE,I,Corso,Steve,Will talk,10/29/2010,A,X,,,,Y
+Matei Ripeanu,Univ. of British Columbia,E,Ripeanu,Tevfik,10/26/2010,10/29/2010,A,X
+Byung-Gon Chun,Intel Research,E,Chun,Steve,10/26/2010,10/26/2010,I,,X,,X,Y
+Indy Gupta,UIUC,E,Gupta,Steve,10/25/2010,10/25/2010,I,,X (cloud-integ),,X (cloud-integ),,"Interested, but don't have project"
+Srikanth Kandula,MSR,E,Kandula,Steve,10/25/2010,10/25/2010,I,,X,X,X,Y
+Gregor von Laszevski,Indiana University,E,Laszevski,Tevfik,10/26/2010,10/26/2010,I,,X
+John Regehr,Utah,E,Regehr,GWA,10/27/2010,10/27/2010,I,,x,,x,Y
+Z. Morley Mao,Michigan,E,Mao,Steve,10/25/2010,10/29/2010,I,,X,X,X,Y
+Sandeep Kulkarni,Michigan State,E,Kulkarni,Murat,10/25/2010,10/25/2010,I?,,X,X
+Matt Caesar,UIUC,E,Caesar,Steve,10/25/2010,10/25/2010,N,,,X (debugging),,Y
+Brighten Godfrey,UIUC,E,Godfrey,Steve,10/25/2010,10/26/2010,N,,,X,,,"Interested, but don't have project"
+Dimitrios Koutsonikolas,UB CSE,I,Koutsonikolas,Murat,10/25/2010,10/28/2010,N,,,X,,,Ask him to ask his advisor?
+Hung Ngo,UB CSE,I,Ngo,Murat,10/25/2010,10/28/2010,N,,,X
+Hari Balakrishnan,MIT,E,Balakrishnan,GWA,10/27/2010,10/28/2010,N,,,x
+Stella Batalama,UB EE,I,Batalama,Murat,10/28/2010,10/29/2010,N,,,X
+Dimitris Pados,UB EE,I,Pados,Murat,10/28/2010,10/28/2010,N,,,X
+Jennifer Rexford,Princeton,E,Rexford,Steve,10/26/2010,10/28/2010,N,,,X,,Y
+Chunming Qiao,UB CSE,I,Qiao,Murat,10/25/2010,10/25/2010,N?,X,,X
+Sheng Zhong,UB CSE,I,Zhong,Murat,10/25/2010,10/25/2010,N?,,X,X
+Landon Cox,Duke,E,Cox,GWA,10/27/2010,10/27/2010,O,,,,x,Y
+Rodrigo Fonseca,Brown,E,Fonseca,GWA,10/27/2010,10/27/2010,O,x,x,x,x
+Samuel Madden,MIT,E,Madden,GWA,10/27/2010,10/27/2010,O,x,x,x,x,Y
+Thomas Schmid,Utah,E,Schmid,GWA,10/27/2010,10/27/2010,O,x,x,x,x
+Shambhu Upadhyaya,UB CSE,I,Upadhyaya,Murat,10/25/2010,10/25/2010,O?,X,X,,X
+David Abramson,Monash University,E,Abramson,Tevfik,10/26/2010
+Anish Arora,Ohio State,E,Arora,Murat,10/25/2010
+Roger Barga,Microsoft Research,E,Barga,Tevfik,10/26/2010
+Philippe Bonnet,ITU Copenhagen,E,Bonnet,GWA,10/27/2010
+Umit Catalyurek,Ohio State,E,Catalyurek,Tevfik,10/26/2010
+Mark Corner,UMass Amherst,E,Corner,GWA,10/27/2010
+Prabal Dutta,Michigan,E,Dutta,GWA,10/27/2010
+Jakob Eriksson,UIC,E,Eriksson,GWA,10/27/2010,Still thinking
+James Hamilton,Amazon,E,Hamilton,Tevfik,10/26/2010
+Alexandru Iosup,Delft Univ. of Technology,E,Iosup,Tevfik,10/26/2010
+Robin Kravets,UIUC,E,Kravets,Steve,10/25/2010
+Phil Levis,Stanford,E,Levis,GWA,10/27/2010,10/27/2010
+Shwetak Patel,UW,E,Patel,GWA,10/27/2010
+Bianca Schroeder,Univ. of Toronto,E,Schroeder,Tevfik,10/26/2010
+Andreas Terzis,Johns Hopkins,E,Terzis,GWA,10/27/2010,10/30/2010,N,X,X,X
+Ali Saman Tosun,UT San Antonio,E,Tosun,Murat,10/25/2010,10/25/2010,,X,,X
+Nitin Vaidya,UIUC,E,Vaidya,Murat,10/28/2010,,N,,,X
+Rich Wolski,UC Santa Barbara,E,Wolski,Tevfik,10/26/2010
+Liang-Jie Zhang,IBM Research,E,Zhang,Tevfik,10/26/2010
+Mark Shepard,UB Media Study,I,Shepard,Murat,,,A,X
