@@ -6,7 +6,7 @@
 As part of determining whether discarded smartphones can replace sensor motes
 for some sensor networking applications, we perform an attribute-by-attribute
 comparison of the two options. We compare the Epic mote, a common sensor node
-platform, with one discarded phone, the Samsung Nexus S 4G model that was
+platform, with one discarded phone, the Samsung Nexus~S~4G  model that was
 used for our preliminary feasibility study. Table~\ref{table-comparison}
 presents numbers used in the discussion below, drawn from both datasheets and
 experiments. As an additional comparison point, we also include numbers for
@@ -15,13 +15,49 @@ single-board computer.
 
 \subsection{Cost and Availability}
 
-\textbf{Advantage: discarded smartphone.}
+We would expect the rapid turnover and high production volumes for consumer
+devices like smartphones to cause their prices to start low and fall quickly,
+and our data shows that this is the case. The Samsung Nexus~S was released in
+2010 at \$529 unlocked, but only three years later Sprint offers customers
+\$22 as a trade-in value for a returned device in good condition, making it
+cheaper than both the Raspberry~Pi Model~B (\$35) and the Epic~Mote (\$69),
+despite offering many more features as detailed below.
+
+While both the Raspberry~Pi and Epic can be purchased new in unlimited
+quantities, one concern about the use of discarded devices is availability.
+However, as stated earlier the EPA estimates that 141~million mobile devices
+were discarded in 2009. In several years, even if only half are Android
+devices and only 10\% of those are in working condition, that still leaves
+millions available for reuse. \textbf{Advantage: discarded smartphone.}
 
 \subsection{Packaging and Human Interface}
 
+Both the Epic~Mote and the Raspberry~Pi are shipped as bare circuit boards
+and lack any human interface. In contrast, the discarded Nexus~S comes
+packaged in plastic and features a familiar touch-screen interface.
 \textbf{Advantage: discarded smartphone.}
 
 \subsection{Sensors and Sensor Interface}
+
+The Epic~Mote is designed as a sensor platform, and so includes multiple
+sensor interfaces while integrating no on-board sensors. The Raspberry~Pi is
+not designed for sensing applications but still exposes GPIO ports and a USB
+interface allowing external sensors to be attached.
+
+On the Nexus~S and other discarded phones the situation is more complicated.
+On the plus side, many phones include multiple integrated sensors, although
+the sensor suite is designed around smartphone and mobile computing
+applications and its composition varies across devices. In addition, the
+increasingly-ubquitous $\mu$USB port creates the possibility of adding
+additional sensors, or the even-more-ubiquitous audio jack can be
+``hijacked''~\cite{FIXME-audiohijak} for this purpose.
+
+Unfortuntely, our experience is that many smartphone USB controllers are not
+designed for this purpose. If they can enter USB host mode at all, their
+power consumption when acting as a host is prohibitive.\XXXnote{GWA: Need
+more details from Aslak here.}  We are investigating this problem in more
+detail and hope to be able to develop software solutions on devices where the
+hardware has the necessary capabilities.
 
 Overally, difficulties with operating in USB host mode prevent discarded
 phones from fully taking advantage of their ubiquitous micro-USB interface.
