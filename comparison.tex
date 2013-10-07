@@ -52,20 +52,29 @@ increasingly-ubquitous $\mu$USB port creates the possibility of adding
 additional sensors, or the even-more-ubiquitous audio jack can be
 ``hijacked''~\cite{FIXME-audiohijak} for this purpose.
 
-Unfortuntely, our experience is that many smartphone USB controllers are not
+Unfortunately, our experience is that many smartphone USB controllers are not
 designed for this purpose. If they can enter USB host mode at all, their
-power consumption when acting as a host is prohibitive.\XXXnote{GWA: Need
-more details from Aslak here.}  We are investigating this problem in more
+power consumption when acting as a host is prohibitive, possibly because they
+are expecting to receive power when the USB cable is connected.\XXXnote{GWA:
+Need more details from Aslak here.} We are investigating this problem in more
 detail and hope to be able to develop software solutions on devices where the
 hardware has the necessary capabilities.
 
-Overally, difficulties with operating in USB host mode prevent discarded
-phones from fully taking advantage of their ubiquitous micro-USB interface.
-\textbf{Advantage: even.}
+Overally, while smartphones integrate more sensors, difficulties with
+operating in USB host mode prevent them from fully taking advantage of their
+interfaces when attaching external sensors. \textbf{Advantage: even.}
 
 \subsection{Programming Environment}
 
-\textbf{Advantage: discarded smartphone.}
+Both the TinyOS~\cite{FIXME-TinyOS} and Contiki~\cite{FIXME-Contiki} sensor
+node programming frameworks are notoriously difficult to learn and use, a
+challenge that the sensor network research community has been trying to
+address for years. In contrast, there are over 1~million applications hosted
+on the Google Play store, evidence of a large and growing Android developer
+community built on pre-existing familiarity with the Java programming
+language. We anticipate that the capabilities of these developers can be
+harnessed in developing applications that reuse discarded phones as sensors
+and in other ways. \textbf{Advantage: discarded smartphone.}
 
 \subsection{Capabilities}
 
