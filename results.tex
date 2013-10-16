@@ -13,6 +13,18 @@ team rendered the node as dead, regardless of the amount of energy it had
 reported, with the two hour delay chosen to represent the potential
 requirements of a somewhat delay-tolerant application.
 
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{./figures/comparison.pdf}
+
+\caption{\small Lifetime results for two light sensing applications.
+\textnormal{Both the Tiny Sensor Android (Section~\ref{subsec-tiny}) and
+Sensor Android (Section~\ref{subsec-full}) approaches were projected to
+achieve a lifetime of 8--9 days.}}
+
+\label{fig-comparison}
+\end{figure}
+
+
 \XXXnote{Overall results.}
 
 Broadly speaking the teams both explored two different options with important
@@ -24,10 +36,10 @@ From a programming perspective, we were hopeful that we could preserve the
 familiar Android environment that many programmers today are learning. But
 from an energy management persective, we were worried that the platform
 contained features designed around short lifetimes that would prove
-unhelpful. We describe both approaches and our findings in more detail
-below.
+unhelpful. We describe both approaches in more detail below.
 
 \subsection{Tiny Sensor Android}
+\label{subsec-tiny}
 
 Tiny Android is a development option enabling a stripped-down build intended
 for testing new devices, and was not suitable for our application without
@@ -53,6 +65,8 @@ idle, there was an extra 8~mA of current during the idle state which we have
 yet to explain. We believe it may be caused by \XXXnote{GWA : Guru TODO}.
 
 \subsection{Sensor Android}
+\label{subsec-full}
 
-\XXXnote{GWA: Discuss what TinyAndroid is and what it preserves in the build,
-as well as the difficulty in programming to the low-level APIs.}
+\XXXnote{GWA: Anand TODO} 
+
+\subsection{Comparison}
