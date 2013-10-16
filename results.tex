@@ -56,17 +56,12 @@ modifications. Wifi drivers along with \texttt{dhcpcd} and
 dependency introduced was \texttt{openssl}. \XXXnote{GWA: Total package
 count.}
 
-The implementation was done primarily in C, consisting of 1500~lines-of-code
-(LOC).
-The program consists of an infinite loop with each iteration containing the
-following operations: 
-\begin{itemize}
-  \item Set alarm to wake up for next sample
-  \item Enable light sensor, sample light sensor
-  \item Obtain battery level
-  \item Start Wifi, send sample, stop Wifi
-  \item Suspend device
-\end{itemize}
+(LOC). The program comprises an infinite loop containing a set of operations. 
+First, an alarm is set to wake up for the next sample. Then, the light
+sensor is enabled and a sample is obtained from the sensor as well as the
+battery. The Wifi interface is then enabled for a short period to send the
+message and disabled immediately after. The kernel is then asked to suspend the
+device until it is woken up by the alarm.
 Each iteration was measured to keep the device awake for \XXXnote{?: period}.
 
 Figure~\ref{fig-tinyandroid} shows current output for one sense-and-send
