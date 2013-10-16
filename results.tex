@@ -3,46 +3,48 @@
 
 To explore the potential to transform our discarded Nexus~S~4G smartphones
 into low-power sensors, the authors divided into two teams and engaged in a
-lifetime programming competition. Our preliminary results were encouraging:
-\XXXnote{FIXME}. We describe the application and two approaches to
-programming it on Android devices in this section.
+lifetime programming competition. Each team was provided five discarded
+Nexus~S~4G phones and given two weeks to write a program that recorded
+battery and light levels every 15~minutes and transmitted them to a server
+over a Wifi connection. The goal was to implement a sensing application that
+would last as long as possible, while maintaining data delivery to the
+server. A gap of over two hours in the data values as observed by the other
+team rendered the node as dead, regardless of the amount of energy it had
+reported, with the two hour delay chosen to represent the potential
+requirements of a somewhat delay-tolerant application.
 
-\subsection{A Lifetime Competition}
-
-Each team was provided five discarded Nexus~S~4G phones and given
-\XXXnote{FIXME} days to write a program that recorded battery and light
-levels every 15~minutes and transmitted them to a server over a Wifi
-connection. The goal was to implement a sensing application that would last
-as long as possible, while maintaining data delivery to the server. A gap of
-over two hours in the data values as observed by the other team rendered the
-node as dead, regardless of the amount of energy it had reported, with the
-two hour delay chosen to represent the potential requirements of a somewhat
-delay-tolerant application.
+\XXXnote{Overall results.}
 
 Broadly speaking the teams both explored two different options with important
-implications for reuse in this context: starting with the familiar Android
-API and whittling the platform down to try to limit its inherent energy
-usage, and discarding most of the Android platform and programming directly
-against the underlying low-level APIs. We refer to the first approach as
-``Sensor Android'' and the second as ``Sensor Nodroid''. As a baseline, we
-also tried running one sensing application on an unmodified stock Android
-image, unlinked to any user account and with no applications installed other
-than those that come preinstalled with the Android Open-Source Platform.
-
+implications for reuse in this context: starting with a stock AOSP platform
+build and the familiar Android API, or using a super-minimal Tiny Android
+build that discards most of the platform components. We refer to the first
+approach as ``Sensor Android'' and the second as ``Tiny Sensor Android''.
 From a programming perspective, we were hopeful that we could preserve the
 familiar Android environment that many programmers today are learning. But
 from an energy management persective, we were worried that the platform
-represented too much of the typical short lifetime usage model of mobile
-smartphone devices to support this unusual application. Further description
-of the each approach follows.
+contained features designed around short lifetimes that would prove
+unhelpful. We describe both approaches and our findings in more detail
+below.
+
+\subsection{Tiny Sensor Android}
+
+Tiny Android is a development option enabling a stripped-down build intended
+for testing new devices, and was not suitable for our application without
+modifications. Wifi drivers had be added to the build process, and these
+created several other dependencies. Our Tiny Sensor Android build added
+\XXXnote{GWA : Guru TODO} packages to the \XXXnote{GWA : Guru TODO} normally
+used by Tiny Android.
+
+\XXXnote{GWA : Guru TODO : One or two paragraphs about the implementation.}
+
+Figure~\ref{fig-tinyandroid} shows current output for one sense-and-send
+cycle of our sensing application on Tiny Sensor Android. While the sensing
+and transmission complete quickly, allowing the phone to rapidly return to
+idle, there was an extra 8~mA of current during the idle state which we have
+yet to explain. We believe it may be caused by \XXXnote{GWA : Guru TODO}.
 
 \subsection{Sensor Android}
-
-\XXXnote{GWA: Talk about what was necessary to discard a lot of the services,
-etc., and what was left when we were done. How easy would it be to automate
-this process?}
-
-\subsection{Sensor Nodroid}
 
 \XXXnote{GWA: Discuss what TinyAndroid is and what it preserves in the build,
 as well as the difficulty in programming to the low-level APIs.}
