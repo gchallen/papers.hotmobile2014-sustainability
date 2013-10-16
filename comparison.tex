@@ -66,17 +66,31 @@ interfaces when attaching external sensors. \textbf{Advantage: even.}
 
 \subsection{Programming Environment}
 
-Both the TinyOS~\cite{tinyos} and Contiki~\cite{contiki} sensor
-node programming frameworks are notoriously difficult to learn and use, a
+Both the TinyOS~\cite{tinyos} and Contiki~\cite{contiki} sensor node
+programming frameworks are notoriously difficult to learn and use, a
 challenge that the sensor network research community has been trying to
 address for years. In contrast, there are over 1~million applications hosted
-on the Google Play store, evidence of a large and growing Android developer
-community built on pre-existing familiarity with the Java programming
-language. We anticipate that the capabilities of these developers can be
-harnessed in developing applications that reuse discarded phones as sensors
-and in other ways. \textbf{Advantage: discarded smartphone.}
+on the Google Play store\XXXnote{GWA: Would be great to have a developer
+count, rather than an app count, here, but I couldn't figure out how to get
+the Play Store to cough that up.}  evidence of a large and growing Android
+developer community built on pre-existing familiarity with the Java
+programming language. We anticipate that the capabilities of these developers
+can be harnessed in developing applications that reuse discarded phones as
+sensors and in other ways. \textbf{Advantage: discarded smartphone.}
 
 \subsection{Capabilities}
+
+When comparing the core device capabilities, the discarded phone has the
+clear advantage, with a three orders-of-magnitude faster processor, four
+orders-of-magnitude more memory, and an one order-of-magnitude more storage.
+The discarded phone actually has more memory than the Epic has Flash storage,
+allowing it to cache information in RAM and avoid the energy overhead of
+writing to or reading from Flash. While Flash has the benefit of persisting
+across failures, motes tiny memory sizes typically cause data that could be
+storage in RAM to be move to Flash simply due to lack of space. The Raspberry
+Pi's core specifications are similar to the discarded smartphone, with the
+exception that storage is not included and must be added separately at
+additional cost.
 
 \textbf{Advantage: discarded smartphone.}
 
