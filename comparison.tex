@@ -11,7 +11,9 @@ used for our preliminary feasibility study. Table~\ref{table-comparison}
 presents numbers used in the discussion below, drawn from both datasheets and
 experiments. As an additional comparison point, we also include numbers for
 the Raspberry Pi Model B, since this is a popular, cheap and fairly-powerful
-single-board computer.
+single-board computer. Our comparison considers the multiple aspects involved
+in deploying sensor networks, including cost, difficult, deployment effort,
+servicing, maintainability, and power provisioning.
 
 \subsection{Cost and Availability}
 
@@ -113,14 +115,13 @@ reduced lifetime by an order-of-magnitude. Specialized networks also
 complicate deployment logistics, with several experience
 papers~\cite{volcano-osdi06,FIXME-hitchhikers} documenting the difficulties
 establishing and maintaining 802.15.4 networks and bridges with the outside
-world. One of the authors spent several days of a short deployment working to
-establish a point-to-point serial link between a volcano-monitoring sensor
-network and a monitoring site located 8~km away. At one point, as he and a
-colleague were struggling high on the volcano to diagnose a networking
-problem, the colleague's phone rang with a call from movers in Berkeley, CA,
-some \num{6000}~km away. He reported that the call quality was excellent.
-Sometimes we go to great lengths to ignore the networking infrastructure
-around us.
+world. As an anecdote, one of the authors spent several days of a short
+deployment working to establish a point-to-point serial link between a
+volcano-monitoring sensor network and a monitoring site located 8~km away. At
+one point, as he and a colleague were struggling high on the volcano to
+diagnose a networking problem, the colleague's phone rang with a call from
+movers in Berkeley, CA, some \num{6000}~km away. He reported that the call
+quality was excellent.
 
 Utilizing these ubiquitous networks, however, requires carriers willing to
 tailor cost-effective plans for large groups of nodes sending large amounts
@@ -129,12 +130,22 @@ preliminary willingness to craft metered data plans that could be shared over
 large numbers of devices. Interestingly, the ``all you can eat'' data plans
 offered for years by US cellular carriers may have discouraged this use
 model, since without a way to meter data carriers may fear that larger
-numbers of devices mean more data.
+numbers of devices mean more data. Now multiple carriers offer metered data
+plans that can be shared across multiple devices, indicating that they have
+technology in place to implement this option.
 
-\textbf{Advantage: discarded smartphone.}
+Overall, by avoiding ad-hoc networking and tapping into the most
+widely-deployed networking infrastructures available, the discarded phone is
+easy to deploy almost anywhere. \textbf{Advantage: discarded smartphone.}
 
 \subsection{Power Consumption}
 
-\textbf{Advantage: mote.}
+As the table shows, the idle power consumption of the mote is two
+orders-of-magnitude lower than the discarded phone, unsurprising given that
+this is what motes are designed for. The Raspberry Pi, in contrast, has a
+much higher power consumption than both the mote and the discarded phone,
+reflecting its intended use as a powered device. A plus for the discarded
+phone is its built-in battery, but overall in this area the mote has the
+upper hand. \textbf{Advantage: mote.}
 
 \subsection{Ideal Uses}
