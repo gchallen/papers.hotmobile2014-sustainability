@@ -43,10 +43,13 @@ unhelpful. We describe both approaches in more detail below.
 
 Tiny Android is a development option enabling a stripped-down build intended
 for testing new devices, and was not suitable for our application without
-modifications. Wifi drivers along with dhcpcd and wpa-supplicant had be added to
-the build process. The only dependency introduced was openssl.
+modifications. Wifi drivers along with \texttt{dhcpcd} and
+\texttt{wpa-supplicant} had be added to the build process. The only
+dependency introduced was \texttt{openssl}. \XXXnote{GWA: Total package
+count.}
 
-The implementation was done primarily in C, consisting of 1500~ lines-of-code.
+The implementation was done primarily in C, consisting of 1500~lines-of-code
+(LOC).
 The program consists of an infinite loop with each iteration containing the
 following operations: 
 \begin{itemize}
