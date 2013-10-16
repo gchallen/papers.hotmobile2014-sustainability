@@ -90,13 +90,39 @@ across failures, motes tiny memory sizes typically cause data that could be
 storage in RAM to be move to Flash simply due to lack of space. The Raspberry
 Pi's core specifications are similar to the discarded smartphone, with the
 exception that storage is not included and must be added separately at
-additional cost.
-
-\textbf{Advantage: discarded smartphone.}
+additional cost. \textbf{Advantage: discarded smartphone.}
 
 \subsection{Connectivity}
 
-\textbf{Advantage: discarded smartphone.}
+With their multiple connections to widely-deployed networks, connectivity is
+another important area where the discarded Nexus~S~4G has a distinct
+advantage. The amount of the world not served by cellular, mobile data, and
+Wifi networks is shrinking, meaning that a smartphones can be deployed almost
+anywhere without having to provision network infrastructure. In contrast, the
+Epic mote has only an 802.15.4 low power, low bitrate radio, relying on a
+standard that has yet to be widely deployed. While some have called for a
+Wifi-scale deployment of 802.15.4~\cite{FIXME-leaves}, we consider it
+unlikely that anyone will build a new networking infrastructure at that scale
+to support low-power sensor nodes. In addition, when data aggregation is
+possible Wifi becomes more energy-efficient than
+802.15.4~\cite{FIXME-wificost}.
+
+The ad-hoc routing and networking required when nodes lack direct connections
+to the infrastructure takes a severe toll on the real lifetime of deployed
+sensor networks, with an energy breakdown compiled by Klues et.
+al~\cite{icem-sosp07} of a sensor node showing that periodic idle listening
+reduced lifetime by an order-of-magnitude. Specialized networks also
+complicate deployment logistics, with several experience
+papers~\cite{volcano-osdi06,FIXME-hitchhikers} documenting the difficulties
+establishing and maintaining 802.15.4 networks and bridges with the outside
+world. One of the authors spent several days of a short deployment working to
+establish a point-to-point serial link between a volcano-monitoring sensor
+network and a monitoring site located 8~km away. At one point, as he and a
+colleague were struggling high on the volcano to diagnose a networking
+problem, the colleague's phone rang with a call from movers in Berkeley, CA,
+some \num{6000}~km away. He reported that the call quality was excellent.
+Sometimes we go to great lengths to ignore the networking infrastructure
+around us. \textbf{Advantage: discarded smartphone.}
 
 \subsection{Power Consumption}
 
