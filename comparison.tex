@@ -1,0 +1,151 @@
+\section{Motes v. Discarded Phones}
+\label{sec-comparison}
+
+\input{./figures/devicetable.tex}
+
+As part of determining whether discarded smartphones can replace sensor motes
+for some sensor networking applications, we perform an attribute-by-attribute
+comparison of the two options. We compare the Epic mote, a common sensor node
+platform, with one discarded phone, the Samsung Nexus~S~4G  model that was
+used for our preliminary feasibility study. Table~\ref{table-comparison}
+presents numbers used in the discussion below, drawn from both datasheets and
+experiments. As an additional comparison point, we also include numbers for
+the Raspberry Pi Model B, since this is a popular, cheap and fairly-powerful
+single-board computer. Our comparison considers the multiple aspects involved
+in deploying sensor networks, including cost, difficult, deployment effort,
+servicing, maintainability, and power provisioning.
+
+\subsection{Cost and Availability}
+
+We would expect the rapid turnover and high production volumes for consumer
+devices like smartphones to cause their prices to start low and fall quickly,
+and our data shows that this is the case. The Samsung Nexus~S was released in
+2010 at \$529 unlocked, but only three years later Sprint offers customers
+\$22 as a trade-in value for a returned device in good condition, making it
+cheaper than both the Raspberry~Pi Model~B (\$35) and the Epic~Mote (\$69),
+despite offering many more features as detailed below.
+
+While both the Raspberry~Pi and Epic can be purchased new in unlimited
+quantities, one concern about the use of discarded devices is availability.
+However, as stated earlier the EPA estimates that 141~million mobile devices
+were discarded in 2009. In several years, even if only half are Android
+devices and only 10\% of those are in working condition, that still leaves
+millions available for reuse. \textbf{Advantage: discarded smartphone.}
+
+\subsection{Packaging and Human Interface}
+
+Both the Epic~Mote and the Raspberry~Pi are shipped as bare circuit boards
+and lack any human interface. In contrast, the discarded Nexus~S comes
+packaged in plastic and features a familiar touch-screen interface.
+\textbf{Advantage: discarded smartphone.}
+
+\subsection{Sensors and Sensor Interface}
+
+The Epic~Mote is designed as a sensor platform, and so includes multiple
+sensor interfaces while integrating no on-board sensors. The Raspberry~Pi is
+not designed for sensing applications but still exposes GPIO ports and a USB
+interface allowing external sensors to be attached.
+
+On the Nexus~S and other discarded phones the situation is more complicated.
+On the plus side, many phones include multiple integrated sensors, although
+the sensor suite is designed around smartphone and mobile computing
+applications and its composition varies across devices. In addition, the
+increasingly-ubquitous $\mu$USB port creates the possibility of adding
+additional sensors, or the even-more-ubiquitous audio jack can be
+``hijacked''~\cite{FIXME-audiohijack} for this purpose.
+
+Unfortunately, our experience is that many smartphone USB controllers are not
+designed for this purpose. If they can enter USB host mode at all, their
+power consumption when acting as a host is prohibitive, possibly because they
+are expecting to receive power when the USB cable is connected.\XXXnote{GWA:
+Need more details from Aslak here.} We are investigating this problem in more
+detail and hope to be able to develop software solutions on devices where the
+hardware has the necessary capabilities.
+
+Overally, while smartphones integrate more sensors, difficulties with
+operating in USB host mode prevent them from fully taking advantage of their
+interfaces when attaching external sensors. \textbf{Advantage: even.}
+
+\subsection{Programming Environment}
+
+Both the TinyOS~\cite{tinyos} and Contiki~\cite{contiki} sensor node
+programming frameworks are notoriously difficult to learn and use, a
+challenge that the sensor network research community has been trying to
+address for years. In contrast, there are over 1~million applications hosted
+on the Google Play store, evidence of a large and growing Android developer
+community built on pre-existing familiarity with the Java programming
+language. We anticipate that the capabilities of these developers can be
+harnessed in developing applications that reuse discarded phones as sensors
+and in other ways. \textbf{Advantage: discarded smartphone.}
+
+\subsection{Capabilities}
+
+When comparing the core device capabilities, the discarded phone has the
+clear advantage, with a three orders-of-magnitude faster processor, four
+orders-of-magnitude more memory, and an one order-of-magnitude more storage.
+The discarded phone actually has more memory than the Epic has Flash storage,
+allowing it to cache information in RAM and avoid the energy overhead of
+writing to or reading from Flash. While Flash has the benefit of persisting
+across failures, motes tiny memory sizes typically cause data that could be
+storage in RAM to be move to Flash simply due to lack of space. The Raspberry
+Pi's core specifications are similar to the discarded smartphone, with the
+exception that storage is not included and must be added separately at
+additional cost. \textbf{Advantage: discarded smartphone.}
+
+\subsection{Connectivity}
+
+With their multiple connections to widely-deployed networks, connectivity is
+another important area where the discarded Nexus~S~4G has a distinct
+advantage. The amount of the world not served by cellular, mobile data, and
+Wifi networks is shrinking, meaning that a smartphones can be deployed almost
+anywhere without having to provision network infrastructure. In contrast, the
+Epic mote has only an 802.15.4 low power, low bitrate radio, relying on a
+standard that has yet to be widely deployed. While some have called for a
+Wifi-scale deployment of 802.15.4~\cite{FIXME-leaves}, we consider it
+unlikely that anyone will build a new networking infrastructure at that scale
+to support low-power sensor nodes. In addition, when data aggregation is
+possible Wifi becomes more much more energy-efficient than
+802.15.4~\cite{wirelessenergyconsumption-url} in terms of power-per-byte.
+
+The ad-hoc routing and networking required when nodes lack direct connections
+to the infrastructure takes a severe toll on the real lifetime of deployed
+sensor networks, with an energy breakdown compiled by Klues et.
+al~\cite{icem-sosp07} of a sensor node showing that periodic idle listening
+reduced lifetime by an order-of-magnitude. Specialized networks also
+complicate deployment logistics, with several experience
+papers~\cite{volcano-osdi06,FIXME-hitchhikers} documenting the difficulties
+establishing and maintaining 802.15.4 networks and bridges with the outside
+world. As an anecdote, one of the authors spent several days of a short
+deployment working to establish a point-to-point serial link between a
+volcano-monitoring sensor network and a monitoring site located 8~km away. At
+one point, as he and a colleague were struggling high on the volcano to
+diagnose a networking problem, the colleague's phone rang with a call from
+movers in Berkeley, CA, some \num{6000}~km away. He reported that the call
+quality was excellent.
+
+Utilizing these ubiquitous networks, however, requires carriers willing to
+tailor cost-effective plans for large groups of nodes sending large amounts
+of data. In our conversations with Sprint, they expressed interest
+preliminary willingness to craft metered data plans that could be shared over
+large numbers of devices. Interestingly, the ``all you can eat'' data plans
+offered for years by US cellular carriers may have discouraged this use
+model, since without a way to meter data carriers may fear that larger
+numbers of devices mean more data. Now multiple carriers offer metered data
+plans that can be shared across multiple devices, indicating that they have
+technology in place to implement this option.
+
+Overall, by avoiding ad-hoc networking and tapping into the most
+widely-deployed networking infrastructures available, the discarded phone is
+easy to deploy almost anywhere. \textbf{Advantage: discarded smartphone.}
+
+\subsection{Power Consumption}
+
+As the table shows, the idle power consumption of the mote is two
+orders-of-magnitude lower than the discarded phone, unsurprising given that
+this is what motes are designed for. The Raspberry Pi, in contrast, has a
+much higher power consumption than both the mote and the discarded phone,
+reflecting its intended use as a powered device. A plus for the discarded
+phone is its built-in battery, but overall in this area the mote has the
+upper hand. \textbf{Advantage: mote.}
+
+\subsection{Ideal Uses}

@@ -1,0 +1,107 @@
+\renewcommand{\arraystretch}{1.2}
+\begin{table*}[t]
+\begin{threeparttable}
+{\footnotesize
+\begin{tabularx}{\textwidth}{rXXX}
+
+&
+\multicolumn{1}{c}{\textbf{Epic Mote}} &
+\multicolumn{1}{c}{\textbf{Raspberry Pi Model B}} &
+\multicolumn{1}{c}{\textbf{Discarded Nexus S 4G}} \\ \toprule
+
+\textbf{Cost} &
+\$69 &
+\$35 &
+\$22\tnote{1} \\ \midrule
+
+\textbf{Microprocessor} &
+4/8~MHz MSP~430 &
+800~MHz\tnote{2} ARM1176JZ-F &
+1~GHz\tnote{2} ARM Cortex A8 \\
+
+\textbf{Memory} &
+10~KB &
+512~MB &
+512~MB \\
+
+\textbf{Storage} &
+2~MB &
+SD card sold separately\tnote{3} &
+16~GB \\ \midrule
+
+\textbf{Wireless Connectivity} &
+802.15.4 &
+None &
+SMS, 3G data, Wifi (802.11 b/g/n), 4G WiMax \\ \midrule
+
+\textbf{Packaging} &
+Open circuit board &
+Open circuit board &
+Plastic case \\
+
+\textbf{Human Interface} &
+None &
+LEDs, HDMI output &
+480~x~800 pixel touch screen \\ \midrule
+
+\textbf{Onboard Sensors} &
+None &
+None &
+Location (GPS), accelerometer, gyroscope, proximity, compass, GPS, camera,
+light \\
+
+\textbf{Sensor Interface} &
+8 ADC channels, 8 GPIO ports, OneWire &
+2 USB ports, GPIO &
+1 microUSB port \\ \midrule
+
+\textbf{Operating System} &
+TinyOS &
+Linux &
+Linux \\
+
+\textbf{Programming} &
+NesC &
+Python, C &
+Java, Android \\ \midrule
+
+
+\textbf{Sleep Power} &
+27~$\mu$W &
+500~mW\tnote{4} &
+4.2~mW \\
+
+\textbf{Battery} &
+None &
+None &
+Li-Ion 1500~mAh \\ \midrule
+
+\end{tabularx}
+}
+{\footnotesize
+\begin{tablenotes}
+\item [1] Customer buyback price quoted by Sprint for a smartphone in good
+condition.
+\item [2] Processor is capable of dynamic voltage and frequency scaling
+(DVFS).
+\item [3] The cheapest 16~GB SD card we could locate on NewEgg cost \$9,
+increasing the total cost of the Raspberry Pi to \$44.
+
+\item [4] With the onboard hub removed~\cite{rpipower-url}.
+
+\end{tablenotes}
+}
+
+\vspace*{-0.1in}
+
+\caption{Comparison between potential sensing platforms. \textnormal{The
+discarded Nexus~S~4G smartphone has multiple advantages compared with both
+the Epic mote and the Raspberry Pi Model B.}}
+
+\vspace*{0.1in}
+\hrule
+\vspace*{-0.2in}
+
+\end{threeparttable}
+\label{table-comparison}
+\end{table*}
