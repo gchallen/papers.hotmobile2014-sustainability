@@ -3,8 +3,8 @@ TARGETS = traces.pdf
 all: $(TARGETS)
 	@echo > /dev/null
 
-traces.pdf: traces.py tinytrace.csv fulltrace.csv
-	./$< tinytrace.csv fulltrace.csv
+traces.pdf: traces.py traces/tinytrace.csv traces/fulltrace.csv
+	./$< traces/tinytrace.csv traces/fulltrace.csv
 
 clean:
 	@rm -f $(TARGETS)
