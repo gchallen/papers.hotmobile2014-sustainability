@@ -44,5 +44,5 @@ ax[1].set_xlabel(r'{\small \textbf{Time (Seconds)}}')
 ax[1].legend(loc='upper right')
 
 fig.subplots_adjust(hspace=0.08, left=0.14, bottom=0.12,right=0.97, top=0.93)
-fig.set_size_inches(3.5,4.0)
+fig.set_size_inches(3.5,5.0)
 fig.savefig('traces.pdf')
