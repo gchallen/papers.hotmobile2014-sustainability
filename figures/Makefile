@@ -1,10 +1,13 @@
-TARGETS = traces.pdf
+TARGETS = traces.pdf comparison.pdf
 
 all: $(TARGETS)
 	@echo > /dev/null
 
-traces.pdf: traces.py traces/tinytrace.csv traces/fulltrace.csv
-	./$< traces/tinytrace.csv traces/fulltrace.csv
+traces.pdf: traces.py data/tinytrace.csv data/fulltrace.csv
+	./$< data/tinytrace.csv data/fulltrace.csv
+
+comparison.pdf: comparison.py data/tinylog.csv data/fulllog.csv
+	./$< data/tinylog.csv data/fulllog.csv
 
 clean:
 	@rm -f $(TARGETS)

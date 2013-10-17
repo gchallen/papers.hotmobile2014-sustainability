@@ -36,10 +36,10 @@ for line in ff:
 fig, ax = plt.subplots(2, sharex=True)
 
 ax[0].set_ylabel(r'{\small \textbf{Current (mA)}}')
-ax[0].plot(androidtime,androidcurrent, color='blue', linewidth=2,label='Sensor Android', rasterized=True)
+ax[0].plot(androidtime,androidcurrent, color='blue', linewidth=2,label=r'{\small \textbf{Sensor Android}}', rasterized=True)
 ax[0].legend(loc='upper right')
 ax[1].set_ylabel(r'{\small \textbf{Current (mA)}}')
-ax[1].plot(tinytime,tinycurrent,color='green',label='Tiny Sensor Android', rasterized=True)
+ax[1].plot(tinytime,tinycurrent,color='green',label=r'{\small \textbf{Tiny Sensor Android}}', rasterized=True)
 ax[1].set_xlabel(r'{\small \textbf{Time (Seconds)}}')
 ax[1].legend(loc='upper right')
 
