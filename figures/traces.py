@@ -5,8 +5,10 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 import pylab
-from matplotlib.backends.backend_pdf import PdfPages
 
+from matplotlib import rc
+rc('font',**{'family':'serif','serif':['Times'],'size':'10'})
+rc('text', usetex=True)
 
 f = open(sys.argv[1], 'r')
 tinytime = []
@@ -31,40 +33,16 @@ for line in ff:
     androidtime.append(t)
     androidcurrent.append(float(data[1]))
 
-#fig,ax1 = plt.subplots()
-#pylab.ylim([0,700])
-#ax1.plot(time,current)
-#ax1.set_xlabel('Time in Seconds.')
-#ax1.set_ylabel('Current draw in mA')
-
-'''fig = plt.figure()
-
-ax1 = fig.add_subplot(2,1,1)
-ax1.plot(tinytime,tinycurrent, color='blue')
-ax1.set_autoscalex_on(False)
-ax1.set_xlim([0,80])
-ax1.set_ylabel('Current draw (mA)')
-#plt.set_ylim([0,700])
-
-
-
-ax2 = fig.add_subplot(2,1,2)
-ax2.plot(androidtime,androidcurrent,color='green')
-ax2.set_xlabel('Time (Seconds)')
-ax2.set_ylabel('Current draw (mA)')
-'''
-
 fig, ax = plt.subplots(2, sharex=True)
 
-ax[0].set_ylabel('Current (mA)',fontsize=10)
+ax[0].set_ylabel(r'{\small \textbf{Current (mA)}}')
 ax[0].plot(androidtime,androidcurrent, color='blue', linewidth=2,label='Sensor Android', rasterized=True)
-ax[0].legend(loc='upper center', bbox_to_anchor=(0.5, 1.15), fontsize=10)
-ax[1].set_ylabel('Current (mA)', fontsize=10)  
+ax[0].legend(loc='upper right')
+ax[1].set_ylabel(r'{\small \textbf{Current (mA)}}')
 ax[1].plot(tinytime,tinycurrent,color='green',label='Tiny Sensor Android', rasterized=True)
-ax[1].set_xlabel('Time (Seconds)', fontsize=10)  
-ax[1].legend(loc='upper center', bbox_to_anchor=(0.5, 1.15), fontsize=10)
-#  ax[1].legend(['AOSP','TINY_ANDROID'],'upper right', fontsize=8)
+ax[1].set_xlabel(r'{\small \textbf{Time (Seconds)}}')
+ax[1].legend(loc='upper right')
 
-
-fig.subplots_adjust(hspace=0.17, left=0.08, bottom=0.07,right=0.97, top=0.93)
+fig.subplots_adjust(hspace=0.08, left=0.14, bottom=0.12,right=0.97, top=0.93)
+fig.set_size_inches(3.5,4.0)
 fig.savefig('traces.pdf')
