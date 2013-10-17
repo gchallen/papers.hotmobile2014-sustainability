@@ -56,9 +56,36 @@ and transmission complete quickly, allowing the phone to rapidly return to
 idle, there was an extra 8~mA of current during the idle state which we have
 yet to explain. We believe it may be caused by \XXXnote{GWA : Guru TODO}.
 
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{./figures/samplecomparison.pdf}
+
+\caption{\small Current draw for a single sense-and-send cycle.
+\textnormal{Both the Tiny Sensor Android (Section~\ref{subsec-tiny}) and
+            Sensor Android (Section~\ref{subsec-full}) have similar current draw for sensing and sending.}}
+
+\label{fig-tinyandroid}
+\end{figure}
+
+
 \subsection{Sensor Android}
 \label{subsec-full}
 
 \XXXnote{GWA: Anand TODO} 
+The image for the Sensor Android build was built from the latest available AOSP code from the JRO03R branch.
+No changes were made to the platform as we wanted to measure the performance of stock AOSP against TINY Android build.
+However we manually disabled all the default apps like Browser, Calendar, Email, etc. through the settings to disable some of the background services spawned by these applications. 
+Although this could have been done during the building of the platform, we didn't want to change the stock platform to keep the application development process as simple as possible.
+
+The sensing application was written in 291 loc using the available API's provided by Android framework. 
+Before the start of the experiment, We assigned a static IP to the Wifi interface and the phone was put into Airplane mode to 
+disable the cellular radio, Android allows users to use other radios like the Wifi to be enabled in airplane mode.
+The sensing application controlled the enabling and disabling of the Wifi radio interface for each sensing period.
+
+Figure~\ref{fig-tinyandroid} shows the current output for one sense-and-send cycle of our sensing application on the Sensor Android. Our sensing application 
+completes the sense and send cycle quickly comparable to Tiny Sensor, This is seen in the high current draw phase in the graph, however we notice that there is a 60 second long tail before
+the phone completly goes to idle state. On further investigation, we found that the ConnectivityService in Android holds a Wakelock for 60 seconds to allow other radio interfaces to connect
+after one of the interfaces is disconnected. For our sensing application this is not required and the Platform code can be easily modified to remove this behavior.
+
+
 
 \subsection{Comparison}
