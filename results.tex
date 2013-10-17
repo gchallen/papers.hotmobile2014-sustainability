@@ -101,7 +101,28 @@ ConnectivityService in the Android framework holds a Wakelock for 60 seconds to 
 radio interfaces to connect  to a network after one of the interfaces is disconnected. 
 For our sensing application this is not required and the Platform code can be easily modified to remove this behavior.
 
+\subsection{Expected Lifetime}
+Smartphones come with high capacity batteries to power the various components of the smartphone and enable it to be used for a reasonable amount of time by the user before it is recharged. Given the fact that we are not using most of the power hungry components like the Display, GPS, etc. in our sensing application. We expect to see a long lifetime for our application on a fully charged battery. Based on the power measurements conducted for each of the three phases of the application \textit{Idle}, \textit{Sense} and \textit{Transmit} we model the expected lifetime achievable for a sensing application in Equation ~\ref{label_exptime} 
+\begin{equation}\label{label_exptime}
+    E(T)_{hrs} = \frac{C_{Batt}}{I_{idle} + s*I_{sense} + t*I_{transmit} + st*I_{combined}}
+\end{equation}
+where:
+\begin{itemize}
+    \item[$E(T)_{hrs}$] Expected time in hours.
+    \item[$C_{Batt}$] Capacity of the battery in mAH.
+    \item[$I_{idle}$] Idle current draw in mA.
+    \item[$I_{sense}$] Sensing current draw in mA.
+    \item[$I_{transmit}$] Transmit current draw in mA.
+    \item[$I_{combined}$] Combined Sense and Transmit current draw in mA.
+    \item[$s$] hourly sensing rate.
+    \item[$t$] hourly transmit rate.
+    \item[$st$] hourly combined sense and transmit rate.
+\end{itemize}
 
+Average Current draw values for each of the phases measured in our experiments 
+are shown in Table ~\ref{table-currentdraw}
+
+\input{./figures/currenttable.tex}
 
 \subsection{Discussion}
 
