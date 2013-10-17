@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+
+import sys
 import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
@@ -5,7 +8,7 @@ import pylab
 from matplotlib.backends.backend_pdf import PdfPages
 
 
-f = open('gurusample.csv','r')
+f = open(sys.argv[1], 'r')
 tinytime = []
 tinycurrent = []
 androidtime = []
@@ -18,7 +21,7 @@ for line in f:
     tinycurrent.append(float(data[1]))
 f.close()
 
-ff=open('staticip.csv','r')
+ff = open(sys.argv[2], 'r')
 for line in ff:
     data = line.split(',')
     t = float(data[0])
@@ -54,20 +57,14 @@ ax2.set_ylabel('Current draw (mA)')
 fig, ax = plt.subplots(2, sharex=True)
 
 ax[0].set_ylabel('Current (mA)',fontsize=10)
-ax[0].plot(androidtime,androidcurrent, color='blue', linewidth=2,label='Sensor Android')
+ax[0].plot(androidtime,androidcurrent, color='blue', linewidth=2,label='Sensor Android', rasterized=True)
 ax[0].legend(loc='upper center', bbox_to_anchor=(0.5, 1.15), fontsize=10)
 ax[1].set_ylabel('Current (mA)', fontsize=10)  
-ax[1].plot(tinytime,tinycurrent,color='green',label='Tiny Sensor Android')
+ax[1].plot(tinytime,tinycurrent,color='green',label='Tiny Sensor Android', rasterized=True)
 ax[1].set_xlabel('Time (Seconds)', fontsize=10)  
 ax[1].legend(loc='upper center', bbox_to_anchor=(0.5, 1.15), fontsize=10)
 #  ax[1].legend(['AOSP','TINY_ANDROID'],'upper right', fontsize=8)
 
 
-pp = PdfPages('samplecomparison.pdf')
 fig.subplots_adjust(hspace=0.17, left=0.08, bottom=0.07,right=0.97, top=0.93)
-from pylab import *
-close()
-pp.savefig(fig)
-pp.close()
-
-#:wplt.show()
+fig.savefig('traces.pdf')
