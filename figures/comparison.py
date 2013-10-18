@@ -71,7 +71,7 @@ ax[1].xaxis.set_major_formatter(mdates.DateFormatter('%m/%d'))
 ax[1].xaxis.set_major_locator(mdates.DayLocator());
 ax[1].axis(ymin=0,ymax=110)
 
-fig.subplots_adjust(hspace=0., left=0.14, bottom=0.12,right=0.99, top=0.99)
+fig.subplots_adjust(hspace=0., left=0.14, bottom=0.15,right=0.99, top=0.99)
 close()
-fig.set_size_inches(3.5,3.0)
+fig.set_size_inches(3.5,2.5)
 fig.savefig('comparison.pdf')
