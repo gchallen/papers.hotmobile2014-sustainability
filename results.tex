@@ -104,7 +104,7 @@ For our sensing application this is not required and the Platform code can be ea
 \subsection{Expected Lifetime}
 Smartphones come with high capacity batteries to power the various components of the smartphone and enable it to be used for a reasonable amount of time by the user before it is recharged. Given the fact that we are not using most of the power hungry components like the Display, GPS, etc. in our sensing application, we expect to see a long lifetime for our application on a fully charged battery. Based on the power measurements conducted for each of the three phases of the application \textit{Idle}, \textit{Sense} and \textit{Transmit} we model the expected lifetime achievable for a sensing application in Equation ~\ref{label_exptime} 
 \begin{equation}\label{label_exptime}
-    E(T)_{hrs} = \frac{C_{Batt}}{I_{idle} + s*I_{sense} + t*I_{transmit}}
+    E(T)_{hrs} = \frac{C_{Batt}}{I_{idle} + s*I_{sense}}
 \end{equation}
 where:
 {\small
@@ -112,16 +112,12 @@ where:
     \item $E(T)_{hrs}$: Expected time in hours.
     \item $C_{Batt}$: Capacity of the battery in mAH.
     \item $I_{idle}$: Idle current draw in mA.
-    \item $I_{sense}$: Sensing current draw in mA.
-    \item $I_{transmit}$: Transmit current draw in mA.
-    \item $I_{combined}$: Combined Sense and Transmit current draw in mA.
+    \item $I_{sense}$: Sensing and transmit current draw in mA.
     \item $s$: hourly sensing rate.
-    \item $t$: hourly transmit rate.
-    \item $st$: hourly combined sense and transmit rate.
 \end{itemize}
 }
 
-Plugging in the current draw values for each of the phases measured in our experiments, the expected lifetime for our sensing application would be 0.619298
+The average current draw values measured in our experiments were $I_{idle}=1.56mA$, $I_{sense}=84.06$ over a period of 5.3 seconds. With a 1500mAH battery and a sensing rate of every 15 minutes, the expected lifetime for our sensing application would be 426.13 Hours. This translates to approximately 18 days of application lifetime. Considering the non linear discharge rate of the battery as seen in Figure~\ref{fig-comparison}, the expected life would be less than the calculated value.
 
 
 %\input{./figures/currenttable.tex}
