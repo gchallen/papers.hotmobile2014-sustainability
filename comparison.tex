@@ -60,12 +60,32 @@ power consumption when acting as a host is prohibitive, possibly because they
 are expecting to receive power when the USB cable is connected. We are
 investigating this problem in more detail and hope to be able to develop
 software solutions on devices where the hardware has the necessary
-capabilities. \XXXnote{GWA : Scott TODO : Add stuff about Arduino here.}
+capabilities.
 
-Overally, while smartphones integrate more sensors, difficulties with
-operating in USB host mode prevent them from fully taking advantage of their
-interfaces when attaching external sensors. \textbf{Advantage: even.}
+An alternative approach to extending a device's default sensor suite is to
+use a tiered approach.  Instead of connecting a single additional senor via
+USB, we could connect multiple sensors to an additional piece of hardware that
+is in turn connected to the Android device. In practice, this can be
+accomplished using the Android Open Accessory protocol (AOA) which provides a
+way to integrate custom hardware accessories with Android devices over USB.
 
+A suitable candidate for a daughterboard in this tiered approach is the Arduino
+ADK board. There are a wide range of sensors available for the Arduino platform
+such as temperature, humidity, light, and water sensors. Using the AOA protocol,
+it is possible to access data from these sensors on an Android device over USB.
+
+Using this Turduckenesque~\cite{sorber2005turducken} tiered approach, we should 
+also be able to increase energy efficiency. By offloading sensing tasks to the 
+Arduino, we can reduce the devices's duty cycle, only needing to periodically 
+wake up to collect the samples from the Arduino.  Furthermore, the Arduino should
+be much more efficient at sensing as the task better fits its design. Using the 
+discarded smartphone as the top level in this tier still yields the advantage of 
+being able to process and transmit this data using all of Android's built in features.
+
+While smartphones were not designed to be sensor platforms, they include several
+built in sensors and can be extended to control a variety of additional sensors.
+However, this is not without an additional level of complexity and challenges. 
+\textbf{Advantage: even.}
 
 \subsection{Programming Environment}
 
