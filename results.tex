@@ -171,14 +171,15 @@ Overall we found our results encouraging, particularly the fact that an
 unmodified stock Android platform could equal the performance of the
 stripped-down Tiny Android build. We believe that this indicates that the
 Java programming framework used by Android is efficient enough to use to
-program discarded devices, even ones with energy constraints.
+program discarded devices, even ones with energy constraints. In addition,
+our estimates indicate that fixing the long-tail problem on the Sensor
+Android approach will double its lifetime, from 8 days to almost 18.
 
 Inspired by our results we are beginning the process of designing a dedicated
-Android build for sensor programming and discarded device reuse.
-Significantly, these use cases consist primarily of a single application
-controlling the entire device, meaning that we can disable all extra included
-applications, as well as reduce resource limitations such as memory limits.
-Ideally we would like to remove all unnecessary platform components as well
-by examining the applications usage of the Android API, but our initial
-experience of doing this manually showed that significant dependencies exist
-which must be carefully identified.
+Android build for sensor programming and discarded device reuse. Because many
+of these use cases consist primarily of a single application controlling the
+entire device, we can disable all extra included applications, as well as
+reduce resource limitations such as memory limits. Ideally we would like to
+remove all unnecessary platform components as well by examining the
+applications usage of the Android API, but our attempts to do this manually
+demonstrated that dependencies exist which must be carefully identified.
