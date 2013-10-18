@@ -99,7 +99,7 @@ in the graph, however we notice that there is a 60 second long tail before
 the phone completely goes to the idle state. On further investigation, we found that the 
 ConnectivityService in the Android framework holds a Wakelock for 60 seconds to allow other 
 radio interfaces to connect  to a network after one of the interfaces is disconnected. 
-For our sensing application this is not required and the Platform code can be easily modified to remove this behavior.
+For our sensing application this is not required and the Platform code can be easily modified to diable this behavior.
 
 \subsection{Expected Lifetime}
 Smartphones come with high capacity batteries to power the various components of the smartphone and enable it to be used for a reasonable amount of time by the user before it is recharged. Given the fact that we are not using most of the power hungry components like the Display, GPS, etc. in our sensing application, we expect to see a long lifetime for our application on a fully charged battery. Based on the power measurements conducted for each of the three phases of the application \textit{Idle}, \textit{Sense} and \textit{Transmit} we model the expected lifetime achievable for a sensing application in Equation ~\ref{label_exptime} 
@@ -117,7 +117,7 @@ where:
 \end{itemize}
 }
 
-The average current draw values measured in our experiments were $I_{idle}=1.56mA$, $I_{sense}=84.06$ over a period of 5.3 seconds. With a 1500mAH battery and a sensing rate of every 15 minutes, the expected lifetime for our sensing application would be 426.13 Hours. This translates to approximately 18 days of application lifetime. Considering the non linear discharge rate of the battery as seen in Figure~\ref{fig-comparison}, the expected life would be less than the calculated value.
+The average current draw values measured in our experiments were $I_{idle}=1.56mA$, $I_{sense}=84.06$\footnote{The value excludes the long tail obsvered.} over a period of 5.3 seconds. With a 1500mAH battery and a sensing rate of every 15 minutes, the expected lifetime for our sensing application would be 426.13 Hours. This translates to approximately 18 days of application lifetime. Considering the non linear discharge rate of the battery as seen in Figure~\ref{fig-comparison}, the expected life would be less than the calculated value.
 
 
 %\input{./figures/currenttable.tex}
