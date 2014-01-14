@@ -1,0 +1,69 @@
+\section{Use Cases}
+\label{sec-usecases}
+We describe two sensing applications using discarded smartphones that we are
+currently investigating.
+\subsection{Rooftop Monitoring.}
+include setup figure
+Building rooftops can be equipped with discarded smartphones to monitor the
+environmental conditions. This in turn can be used to regulate the lighting and
+temperature inside the buildings to minimize the energy costs.
+Due to the unavailability of power sources on rooftops and hazardous nature of
+power extension cables, it is unviable to deploy smartphones as monitoring
+instruments without any external power supplies.
+Based on our experiments, we think this can be made possible by using other
+alternate renewable energy sources like solar energy.
+Figure~\ref{solar-setup} shows our current deployment. The solar panel trickle
+charges the smartphone battery. The application running in the smartphone
+periodically senses the temperature and light levels. It then transmits the
+sensed values to a central server every \textit{transmit} interval that is dynamically
+configurable using 3G. Our initial measurements indicates that such a setup is
+enough for a self sustaining monitoring setup. The total cost for the
+deployment was \$XX excluding the cost for the smartphone and data services.
+Purpose - 
+ Environment monitoring
+ roof top deployment on buildings
+ no need external power sources due to extension cable fire hazards and laws.
+ sense and send to central server
+Describe setup 
+ - solar panel charges the phone
+ - phone sleeps, wakes up occasionally to sample sensor values.
+ - periodically transmits collected sensor data using 3G.
+ - goes back to sleep.
+ - had to use Android version < 4.1 to enable airplane mode without the need of
+ root privelages by the application.
+sensors
+  - temp
+  - light
+  - 
+Sustainability-
+  - Potentially no need of any intervention, if the application estimates the
+  available energy efficiently.
+
+Applications
+ - 
+
+\subsection{Urban Monitoring}
+include figures from Immanuel
+  Phones placed in the cars to monitor urban conditions.
+  Feasible due to the density of cars in urban areas
+  Setup
+   - phone draws power from the car battery
+    - direct connection to the battery or cig lighter
+    - may be connected to other external sensors via BT (car CAN bus) or USB
+  Sensors
+   - Onboard 
+    - GPS
+   -External 
+    - Car CAN bus
+    - other sensors connected to the phone using usb host mode.
+
+  Connectivity
+   - either the phone has service enabled
+   - uses the drivers phone connectivity via tethering
+  
+  Sustainability
+  - afer initial setup and installtion in the car, no need of any more human
+  involment.
+  Applications
+   - Enables spatio temporal queries of urban conditions
+
