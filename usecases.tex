@@ -26,9 +26,9 @@ currently investigating.
 Building rooftops can be equipped with discarded smartphones to monitor the
 environmental conditions. This in turn can be used to regulate the lighting and
 temperature inside the buildings to minimize the energy costs.
-Due to the unavailability of power sources on rooftops and hazardous nature of
+Due to the unavailability of power sources on rooftops and the hazardous nature of
 power extension cables, it is unviable to deploy smartphones as monitoring
-instruments without any external power supplies.
+instruments without any power supplies to charge the battery.
 Based on our experiments, we think this can be made possible by using other
 alternate renewable energy sources like solar energy.
 
@@ -38,28 +38,30 @@ periodically senses the temperature and light levels. It then transmits the
 sensed values to a central server every \textit{transmit} interval, a
 configurable parameter, using 3G. 
 
-Our initial measurements indicates that such a setup is
+Our initial measurements indicate that a 1800mAH battery can be fully charged
+in 25
+hours in heavily shadowed regions using the solar panel shown 
+~\ref{fig-solarsetup}, such a setup is
 enough for a self sustaining monitoring application. The total cost for the
-deployment was \$XX excluding the cost for the smartphone and data services.
+deployment was \$67 excluding the cost for the smartphone and data services.
 
 \subsection{Urban Monitoring}
-Cars manufactured post 1996 are equipped to provide On-Board diagnostics(OBD)
+Cars manufactured post 1996 are equipped to provide On-Board Diagnostics(OBD)
 data following the OBD-II specification. With ODB-II, we can monitor rich
 sensor data from the sensors deployed in the cars. With this data, we can design number of
-applications like urban traffic monitoring, pollution monitoring ,etc. 
+applications like urban traffic monitoring, pollution monitoring, etc. 
 
-In order to read the sensor values from the car, we need to instrument the car
-with a OBD
-reader that has Bluetooth capability. We use the smartphones in the car to control
+In order to read the OBD-II data, we need to instrument the car
+with a OBD reader that has Bluetooth capability. We use the smartphone in the car to control
 the OBD reader to retrieve the sensor data from the car's sensors. Once we have
-the data, we can either transmit it immediately or store it to transmit at a
+the data, we can either transmit it immediately or store it and transmit at a
 later time based on the application needs.
 
 Since the smartphone is in the car, it can be powered using the car's power
-sources like the cigarette ligther. We could also use the sensors on the
+sources like the cigarette ligther. This gives us the opportunity to also use the sensors on the
 smartphone like the camera or the GPS to design smarter urban monitoring
-applications without needing to worry of energy management for the smartphone
-application.
+applications without the need to write  energy management to conserve the
+battery of the smartphone.
 
 The total cost for such a monitoring setup is around \$15 excluding the cost
 for the smartphone and connectivity charges.
