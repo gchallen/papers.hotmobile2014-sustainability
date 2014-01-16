@@ -76,6 +76,10 @@ platform such as temperature, humidity, light, and water sensors. Using the
 AOA protocol, it is possible to access data from these sensors on an Android
 device over USB.
 
+\begin{comment}
+
+% 16 Jan 2014 : SDH : Removed to create space.
+
 Using this Turducken-esque~\cite{sorber2005turducken} tiered approach, we
 should also be able to increase energy efficiency. By offloading sensing
 tasks to the Arduino, we can reduce the devices's duty cycle, only needing to
@@ -84,6 +88,7 @@ the Arduino should be much more efficient at sensing as the task better fits
 its design. Using the discarded smartphone as the top level in this tier
 still yields the advantage of being able to process and transmit this data on
 the more-powerful and better-connected smartphone.
+\end{comment}
 
 In summary, while smartphones were not designed to be sensor platforms, they
 include built-in sensors and can be extended to control a variety of others,
@@ -148,6 +153,10 @@ struggling high on the volcano to diagnose a networking problem, the
 colleague's phone rang with a call from movers in Berkeley, CA, some
 \num{6000}~km away.
 
+\begin{comment}
+
+% 16 Jan 2014 : SDH : Space
+
 While attempting to save energy, smartphones can also harness the powered
 nature of the wireless infrastructure they utilize. Wifi Power Saving Mode
 (PSM), for example, allows high-power routers to buffer incoming packets to
@@ -159,6 +168,8 @@ collection could use text messages to awake the network. Discarded phones
 could be aggressively duty-cycled, relying on the willingness of the
 networking infrastructure to hold incoming messages across long sleep
 intervals.
+
+\end{comment}
 
 Utilizing these ubiquitous networks, however, requires carriers willing to
 tailor cost-effective plans allowing sharing across large numbers of nodes.

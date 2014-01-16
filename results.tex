@@ -11,8 +11,7 @@ while maintaining data delivery to the server. A gap of over two hours in the
 data values as observed by the other team rendered the node as dead,
 regardless of the amount of energy it had reported, with the two hour delay
 chosen to represent the potential requirements of a somewhat delay-tolerant
-application. Both teams had members familiar with both Android application and
-platform development.
+application. 
 
 As we established in the previous section, motes are designed to provide
 extremely low energy consumption, whereas smartphones are designed around
@@ -22,7 +21,8 @@ matter how carefully they are programmed---indeed, the idle current of
 deep-sleep mode alone will exhaust the battery in only two months. Instead,
 our goal is to establish whether and how easily we could reduce the energy
 usage to a point where energy-harvesting solutions, such as solar panels,
-could potentially allow continuous operation in an outdoor setting. This
+could potentially allow continuous operation in an outdoor setting (discussed
+in section ~\ref{sec-rooftop}). This
 would allow discarded phones to replace motes for many of the applications
 originally considered for sensor networks, such as
 bridge~\cite{ggb-monitoring}, habitat~\cite{gdi}, and
@@ -45,7 +45,7 @@ Broadly speaking the teams explored two different options with important
 implications for reuse: starting with a stock AOSP platform build and the
 familiar Android API, or using a super-minimal Tiny Android build that
 discards most of the platform components. We refer to the first approach as
-``Sensor Android'' and the second as ``Tiny Sensor Android''. From a
+`Sensor Android'' and the second as ``Tiny Sensor Android''. From a
 programming perspective, we were hopeful that we could preserve the familiar
 Android environment that many programmers today are learning. But from an
 energy management perspective, we were worried that the platform contained
@@ -56,8 +56,7 @@ Overall we were pleased to discover that both approaches were able to achieve
 Figure~\ref{fig-comparison}, despite each approach suffering from a
 significant limitation affecting its performance. We believe that this
 lifetime may allow perpetual operation with commercially-available solar
-panels and are planning to test this assumption as future work. We describe
-both approaches and our findings in more detail below.
+panels. We describe both approaches and our findings in more detail below.
 
 \subsection{Tiny Sensor Android}
 \label{subsec-tiny}
@@ -104,9 +103,9 @@ one minute.}}
 The image for the Sensor Android build was built from the latest available
 AOSP code from the JRO03R branch. No changes were made to the platform as we
 wanted to measure stock performance. However, we manually disabled all the
-default apps---Browser, Calendar, Email---through the settings to eliminate
-any background services the might spawn. (An Android platform designed around
-programming sensors would not include these applications in the first place.)
+default apps that run in the background like Browser, Calendar, and Email 
+(an Android platform designed around
+programming sensors would not include these applications in the first place).
 The sensing application was written in 291 LOC using the standard Android
 API's for accessing sensors and using the network. Before the start of the
 experiment, we assigned a static IP to the Wifi interface and the phone was
@@ -114,7 +113,7 @@ put into airplane mode to disable the cellular radio interface. The sensing
 application controlled the enabling and disabling of the Wifi radio interface
 for each sensing period.
 
-Figure~\ref{fig-traces} shows the current output for one sense-and-send cycle
+Figure~\ref{fig-traces} shows the current draw for one sense-and-send cycle
 of our sensing application on Sensor Android. While it completes the
 sense-and-send operation as quickly as Tiny Sensor Android and sleeps in the
 lowest-power state, there is a 60~s delay before the phone reaches the idle
@@ -187,20 +186,15 @@ demonstrated that dependencies exist which must be carefully identified.
 Given the wide variety of Android devices currently available on the market,
 there are certain concerns to consider with regard to the heterogeneity of
 discarded smartphones.  The discarded Android devices will vary in OS version,
-types of sensors, precision and accuracy of sensors, and battery quality.
+types of sensors, and precision and accuracy of sensors.
 With the number of devices that we anticipate to be available, it is not
 unreasonable to think that heterogeneity can largely be avoided.  However,
 even if it is not possible to find enough of the same desired device model for
 a particular deployment,  variation in devices is still acceptable.  Variations
 in OS version does not matter since the deployed version can be controlled.
-Open source platforms such as CyanogenMod provide third-party firmware that
-would allow us to deploy the same custom platform to a wide variety of device
-models.  While Android does not require manufacturers to include specific sensors,
+While Android does not require manufacturers to include specific sensors,
 the trend is to include more sensors, not less.  Manufacturers have incentive to
 include more sensors to provide a better user experience and enable application
 developers to create more robust applications.  The same incentive applies to
 sensor accuracy, but existing differences can be overcome by sensor calibration
-which should be done regardless to ensure accurate data.  Finally, the battery
-of discarded smartphone may indeed have its best days behind it.  However,
-replacement batteries are cheap.  Replacement batteries for the Samsung Nexus S
-can be found in bulk for under \$5.00 each.
+which should be done regardless to ensure accurate data.
