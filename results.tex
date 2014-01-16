@@ -183,3 +183,24 @@ reduce resource limitations such as memory limits. Ideally we would like to
 remove all unnecessary platform components as well by examining the
 applications usage of the Android API, but our attempts to do this manually
 demonstrated that dependencies exist which must be carefully identified.
+
+Given the wide variety of Android devices currently available on the market,
+there are certain concerns to consider with regard to the heterogeneity of
+discarded smartphones.  The discarded Android devices will vary in OS version,
+types of sensors, precision and accuracy of sensors, and battery quality.
+With the number of devices that we anticipate to be available, it is not
+unreasonable to think that heterogeneity can largely be avoided.  However,
+even if it is not possible to find enough of the same desired device model for
+a particular deployment,  variation in devices is still acceptable.  Variations
+in OS version does not matter since the deployed version can be controlled.
+Open source platforms such as CyanogenMod provide third-party firmware that
+would allow us to deploy the same custom platform to a wide variety of device
+models.  While Android does not require manufacturers to include specific sensors,
+the trend is to include more sensors, not less.  Manufacturers have incentive to
+include more sensors to provide a better user experience and enable application
+developers to create more robust applications.  The same incentive applies to
+sensor accuracy, but existing differences can be overcome by sensor calibration
+which should be done regardless to ensure accurate data.  Finally, the battery
+of discarded smartphone may indeed have its best days behind it.  However,
+replacement batteries are cheap.  Replacement batteries for the Samsung Nexus S
+can be found in bulk for under \$5.00 each.
