@@ -2,15 +2,15 @@
 \label{sec-usecases}
 %\section{Other Forms of Reuse}
 %\label{sec-other}
-The combination of low price and many capabilities makes discarded phones
+The combination of low price and abundant capabilities makes discarded phones
 suitable for many other forms of reuse. 
 We describe two sensing applications using discarded smartphones that we are
 currently investigating.
-\subsection{Rooftop Monitoring}
+\subsection{Outdoor Monitoring}
 \label{sec-rooftop}
 \begin{figure}[t]
   \centering
-  \subfigure[Rooftop Monitoring]{
+  \subfigure[Outdoor Monitoring]{
     \includegraphics[width=0.45\columnwidth]{./figures/mocksetup.pdf}
   \label{fig-solarsetup}}\quad
   \subfigure[Urban Monitoring]{
@@ -52,23 +52,25 @@ deployment was \$67 excluding the cost for the smartphone and data services.
 
 \subsection{Urban Monitoring}
 Cars manufactured post 1996 are equipped to provide On-Board Diagnostics(OBD)
-data following the OBD-II specification. With ODB-II, we can monitor rich
+data following the OBD-II specification. With ODB-II, we can extract rich
 sensor data from the sensors deployed in the cars. With this data, we can design number of
-applications like urban traffic monitoring, pollution monitoring, etc. 
-
-In order to read the OBD-II data, we need to instrument the car
-with a OBD reader that has Bluetooth capability. We use the smartphone in the car to control
+applications like urban traffic monitoring, pollution monitoring, etc. In order to 
+read the OBD-II data, we need to instrument the car with a OBD reader that has Bluetooth 
+capability. We use the smartphone in the car to control
 the OBD reader to retrieve the sensor data from the car's sensors. Once we have
 the data, we can either transmit it immediately or store it and transmit at a
-later time based on the application needs.
+later time based on the application needs. The total cost for such a monitoring setup
+is around \$15, excluding the cost for the smartphone and connectivity charges.
 
+While ODB data can only be collected while the car is running, the phone's other
+sensors can still be used to collect data from their built-in sensors.  Futhermore,
 Since the smartphone is in the car, it can be powered using the car's power
 sources. This gives us the ability to also use the more energy hungry sensors
-like the camera or GPS to design smarter urban monitoring
-applications. 
+like the camera or GPS to design smarter urban monitoring applications. 
 
-The total cost for such a monitoring setup is around \$15 excluding the cost
-for the smartphone and connectivity charges.
+\begin{comment}
+
+% 16 Jan 2014 : SDH : Space
 
 \subsection{Others}
 Another option is to use discarded phones to create storage clusters similar
@@ -76,3 +78,5 @@ to the FAWN~\cite{fawn} fast array of wimpy nodes. Discarded smartphones have
 many similarities in terms of processing power, memory, and storage with the
 devices used by FAWN, combined with a considerable advantage in price, and
 could be used to create Fast Arrays of Discarded Smartphones (FADS).
+
+\end{comment}
