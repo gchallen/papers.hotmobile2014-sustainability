@@ -1,6 +1,6 @@
 START = xxxnote
 END = missing
-CLASS = $(PYTEX)/cls/sig-alternate.cls
+CLASS = ./sig-alternate.cls
 
 all: paper ABSTRACT
 
