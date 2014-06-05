@@ -1,4 +1,4 @@
-START = xxxnote
+START = xxxnote nodraft blue
 END = missing
 CLASS = $(PYTEX)/cls/sig-alternate.cls
 

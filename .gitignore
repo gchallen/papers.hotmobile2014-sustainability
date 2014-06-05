@@ -1,6 +1,8 @@
 ABSTRACT
 /paper.pdf
-.xxxnote
+/.xxxnote
+/.draft
+/.blue
 *.swp
 *.aux
 *.log

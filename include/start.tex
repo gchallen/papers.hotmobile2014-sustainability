@@ -14,14 +14,23 @@
   pdfnewwindow=true,
   colorlinks=false,
   pdfdisplaydoctitle=true,
-  pdfborder={0 0 0}
+  pdfborder={0 0 0},
+  pdfinfo={
+    Author={Geoffrey Challen, Scott Haseley, Anudipa Maiti, Anand Nandugudi,
+    Guru Prasad, Mukta Puri and Junfei Wang},
+    Title={The Mote is Dead. Long Live the Discarded Smartphone!},
+  }
 }
+
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{1in}
+\setlength{\TPVertModule}{1in}
+\textblockorigin{0.75in}{0.5in}
+
 \usepackage[all]{hypcap}
 
-\pdfinfo{
-   /Author ()
-   /Title  ()
-}
-
 \input{.xxxnote}
+\input{.draft}
+\input{.blue}
 \input{common.tex}
