@@ -1,28 +1,55 @@
 \input{./include/start.tex}
+
+\def\theconference{HotMobile'14}
+\def\thetitle{The Mote is Dead. Long Live the Discarded Smartphone}
+\def\theauthors{Geoffrey Challen, Scott Haseley, Anudipa Maiti, Anand Nandugudi,
+Guru Prasad, Mukta Puri and Junfei Wang}
+
+\ifdefined\isdraft
+  \usepackage{draftwatermark}
+  \SetWatermarkText{Under Submission}
+  \SetWatermarkScale{0.6}
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \renewcommand{\headrulewidth}{0pt}
+  \lhead{}
+  \chead{Under Submission to \theconference. Do not distribute.}
+  \rhead{}
+\else
+\fi
+
 \begin{document}
-\title{The Mote is Dead. Long Live the Discarded Smartphone!}
-
-\numberofauthors{1}
-
-\author{
-\alignauthor
-Geoffrey Challen, Scott Haseley, Anudipa Maiti, Anand Nandugudi,\\
-Guru Prasad, Mukta Puri and Junfei Wang\\
-\affaddr{Department of Computer Science and Engineering}\\
-\affaddr{University at Buffalo}\\
-\email{\{challen,shaseley,anudipam,ans25,gurupras,mpuri2,junfeiwa\}@buffalo.edu}
-}
-
-\CopyrightYear{2014}
-\crdata{}
-
-\maketitle
 
 \ifdefined\isblue
 \begin{textblock}{1}(6.4,0)
 \noindent\href{http://blue.cse.buffalo.edu}{\includegraphics[width=0.6in]{./figures/logos/blue.jpg}}
 \end{textblock}
 \fi
+
+\date{}
+
+\title{\thetitle}
+
+\numberofauthors{1}
+
+\author{
+\alignauthor\theauthors\\
+\affaddr{Department of Computer Science and Engineering}\\
+\affaddr{University at Buffalo}\\
+\email{\{challen,shaseley,anudipam,ans25,gurupras,mpuri2,junfeiwa\}@buffalo.edu}
+}
+
+\CopyrightYear{2015}
+\crdata{}
+
+\hypersetup{
+  pdfinfo={
+    Title={\thetitle},
+    Author={\theauthors}
+  },
+}
+
+\maketitle
 
 \input{abstract.tex}
 \input{introduction.tex}
