@@ -1,5 +1,6 @@
 START = xxxnote nodraft blue
 END = missing
+PYTEX = $(shell pwd)/pytex/
 CLASS = $(PYTEX)/cls/sig-alternate.cls
 
 all: paper ABSTRACT
